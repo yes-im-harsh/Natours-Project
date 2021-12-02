@@ -3,12 +3,10 @@
 *::before {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
-  /* box-sizing: border-box; */ }
+  box-sizing: inherit; }
 
 html {
-  font-size: 62.5%;
-  /*or 10px, 16px=100% so 1px=100/16% so 10px=100*10/16=62.5%*/ }
+  font-size: 62.5%; }
 
 body {
   font-family: "Lato", sans-serif;
@@ -23,53 +21,47 @@ body {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
   background-size: cover;
-  /* background-position: top; */
+  background-position: top;
   clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0% 100%);
   position: relative; }
-
-.header__logo {
-  height: 3rem; }
-
-.header__logo-box {
-  position: absolute;
-  top: 3rem;
-  left: 3rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 42%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
+  .header__logo {
+    height: 3rem; }
+  .header__logo-box {
+    position: absolute;
+    top: 3rem;
+    left: 3rem; }
+  .header__text-box {
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 .heading-primary {
   text-transform: uppercase;
   color: #fff;
   margin-bottom: 3rem;
   left: 0%;
-  backface-visibility: hidden;
-  /*Used for fixing the moving of text upward(unknown Reasons), While using animations*/ }
-
-.heading-primary--main {
-  display: block;
-  font-size: 4.5rem;
-  font-weight: 400;
-  letter-spacing: 1.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /* Short hand for above animations
-  animation: moveInLeft 1s ease-out; */
-  /* Other Important Properties */
-  /* animation-delay: 3s;
-  animation-iteration-count: 3; */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 1.5rem;
-  font-weight: 400;
-  letter-spacing: 0.7rem;
-  animation: moveInRight 1s ease-out; }
+  backface-visibility: hidden; }
+  .heading-primary--main {
+    display: block;
+    font-size: 4.5rem;
+    font-weight: 400;
+    letter-spacing: 1.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* Short hand for above animations
+    animation: moveInLeft 1s ease-out; */
+    /* Other Important Properties */
+    /* animation-delay: 3s;
+    animation-iteration-count: 3; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.7rem;
+    animation: moveInRight 1s ease-out; }
 
 /* Key-Frames For Animation */
 @keyframes moveInLeft {
@@ -98,8 +90,7 @@ body {
     opacity: 1; } }
 
 /* ---------------Buttons--------------- */
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
   padding: 1rem 4rem;
@@ -107,12 +98,14 @@ body {
   border-radius: 10rem;
   transition: all 0.2s;
   font-size: 1.6rem;
-  position: relative;
-  /* For .btn::after */ }
+  position: relative; }
 
 .btn:hover {
   transform: translateY(-0.5rem);
   box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, 0.3); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(0.2rem);
@@ -121,6 +114,8 @@ body {
 .btn--white {
   background-color: #fff;
   color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
   content: "";
@@ -133,13 +128,6 @@ body {
   border-radius: 10rem;
   display: inline-block;
   transition: all 0.4s; }
-
-.btn--white::after {
-  background-color: #fff; }
-
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
 
 .btn--animated {
   animation: moveInBottom 0.5s ease-out 0.75s;
