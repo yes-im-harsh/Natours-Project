@@ -1,0 +1,16 @@
+//Starts Here
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; //box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; //or 10px, 16px=100% so 1px=100/16% so 10px=100*10/16=62.5%
+}
+
+body {
+  box-sizing: border-box;
+}
