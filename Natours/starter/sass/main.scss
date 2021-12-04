@@ -1,32 +1,14 @@
 @import "abstracts/variables";
+@import "abstracts/mixins";
 
 @import "base/base";
 @import "base/animations";
 @import "base/typography";
+@import "base/utilites";
 
 @import "components/button";
 
 @import "layout/header";
+@import "layout/grid";
+
 @import "pages/home";
-//Starts Here
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit; //box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%; //or 10px, 16px=100% so 1px=100/16% so 10px=100*10/16=62.5%
-}
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /* font-size: 14px; */
-  line-height: 1.5;
-  color: $color-gray-dark;
-  padding: 20px;
-  box-sizing: border-box;
-}
