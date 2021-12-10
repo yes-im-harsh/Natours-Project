@@ -55,7 +55,7 @@
       animation-fill-mode: backwards;
     }
   }
-  .btn-text {
+  &-text {
     &:link,
     &:visited {
       font-size: $default-font-size;

@@ -6,6 +6,10 @@
   left: 0;
   background-color: rgba($color-black, 0.8);
   z-index: 9999999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
   &__content {
     width: 75%;
     position: absolute;
@@ -15,7 +19,11 @@
     background-color: $color-white;
     box-sizing: 0 2rem 4rem rgba($color-black, 0.2);
     border-radius: 3px;
+    overflow: hidden;
     display: table;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.25);
+    transition: all 0.4s 0.2s;
   }
 
   &__left {
@@ -38,10 +46,40 @@
 
     column-count: 2;
     column-gap: 3rem;
-    column-rule: 1px solid $color-gray-light-2;
+    column-rule: 1px solid $color-grey-light-2;
 
     hyphens: auto;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
+  }
+
+  &__close {
+    &:link,
+    &:visited {
+      text-decoration: none;
+      color: $color-gray-dark;
+      position: absolute;
+      top: 2.8rem;
+      right: 2.8rem;
+      font-size: 3rem;
+      display: inline-block;
+      line-height: 1;
+      transition: all 0.2s;
+    }
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &:target {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  //Animations
+  &:target &__content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 }
