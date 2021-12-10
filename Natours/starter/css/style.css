@@ -71,7 +71,7 @@ body {
     letter-spacing: 0.7rem;
     animation: moveInRight 1s ease-out; }
 
-.heading-secoundary {
+.heading-secondary {
   font-size: 3.5rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -82,7 +82,7 @@ body {
   color: transparent;
   letter-spacing: 0.1rem;
   transition: all 0.2s; }
-  .heading-secoundary:hover {
+  .heading-secondary:hover {
     transform: skewX(-2deg) skewY(-2deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
@@ -107,6 +107,9 @@ body {
 
 .u-margin-top-big {
   margin-top: 8rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 2rem; }
 
 .btn:link, .btn:visited {
   text-decoration: none;
@@ -310,6 +313,42 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+
+.popup {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999999; }
+  .popup__content {
+    width: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-sizing: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    display: table; }
+  .popup__left {
+    width: 33.333333%;
+    display: table-cell; }
+  .popup__right {
+    width: 66.666667%;
+    display: table-cell;
+    vertical-align: middle;
+    padding: 3rem 5rem; }
+  .popup__img {
+    width: 100%;
+    display: block; }
+  .popup__text {
+    font-size: 1.4rem;
+    margin-bottom: 4rem;
+    column-count: 2;
+    column-gap: 3rem;
+    column-rule: 1px solid #777; }
 
 .header {
   height: 95vh;
