@@ -12,7 +12,7 @@ html {
 
   // Responsive Design
 
-  // Method-1
+  /*// Method-1
   // @include respond-phone {
   //   font-size: 50%;
   // }
@@ -27,7 +27,7 @@ html {
   // }
   // @include respond(tab-land) {
   //   font-size: 56.25%; //1rem=16px, So for 9px, so 9/16=56.25px
-  // }
+  // }*/
 
   //Since font size of phone and tab-port are same 50% so we can exclude phone.
 
@@ -50,4 +50,9 @@ html {
 
 body {
   box-sizing: border-box;
+  padding: 2rem;
+
+  @include respond(tab-port) {
+    padding: 0;
+  }
 }

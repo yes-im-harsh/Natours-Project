@@ -1,3 +1,5 @@
+/*Rem and em behaves differently in Media Quarry,It will take the default font size of browsers i.e16px.
+We use em in case of break points.(Best Practise)*/
 *,
 *::after,
 *::before {
@@ -7,11 +9,33 @@
 
 html {
   font-size: 62.5%;
+  /*// Method-1
+  // @include respond-phone {
+  //   font-size: 50%;
+  // }
+
+  // Method-2
+
+  // @include respond(phone) {
+  //   font-size: 50%; /* 1rem=8px,  */
   /*We have put land above, because if a number is <900 so automatically it's <1200, So the 1200 will take precedence,
   because its in last, so we have put tab-land in last because if width is less than 900 then this font size should apply.*/ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 2rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 /* Key-Frames For Animation */
 @keyframes moveInLeft {
@@ -44,8 +68,7 @@ body {
   font-weight: 400;
   /* font-size: 14px; */
   line-height: 1.5;
-  color: #777;
-  padding: 20px; }
+  color: #777; }
 
 .heading-primary {
   text-transform: uppercase;
@@ -65,13 +88,21 @@ body {
       animation: moveInLeft 1s ease-out; */
     /* Other Important Properties */
     /* animation-delay: 3s;
-      animation-iteration-count: 3; */ }
+      animation-iteration-count: 3; */
+    /*Media Quary*/ }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 0.8rem;
+        font-size: 3.5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: 0.7rem;
     animation: moveInRight 1s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 0.4rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -87,6 +118,12 @@ body {
   .heading-secondary:hover {
     transform: skewX(-2deg) skewY(-2deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.2rem; } }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 2.9rem; } }
 
 .heading-tertiary {
   font-size: 1.6rem;
@@ -387,6 +424,9 @@ body {
   background-position: top;
   clip-path: polygon(0 0, 100% 0%, 100% 75vh, 0% 100%);
   position: relative; }
+  @media (max-width: 37.5em) {
+    .header {
+      clip-path: polygon(0 0, 100% 0%, 100% 80vh, 0% 100%); } }
   .header__logo {
     height: 3rem; }
   .header__logo-box {
@@ -405,6 +445,13 @@ body {
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 5rem; } }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 50rem;
+      padding: 0 3.5rem; } }
   .row::after {
     content: "";
     display: table;
@@ -413,6 +460,13 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 5rem; } }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-0f-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-0f-3 {

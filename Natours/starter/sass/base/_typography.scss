@@ -4,7 +4,6 @@ body {
   /* font-size: 14px; */
   line-height: 1.5;
   color: $color-gray-dark;
-  padding: 20px;
 }
 
 .heading-primary {
@@ -29,6 +28,12 @@ body {
 
     /* animation-delay: 3s;
       animation-iteration-count: 3; */
+
+    /*Media Quary*/
+    @include respond(phone) {
+      letter-spacing: 0.8rem;
+      font-size: 3.5rem;
+    }
   }
   &--sub {
     display: block;
@@ -36,6 +41,10 @@ body {
     font-weight: 400;
     letter-spacing: 0.7rem;
     animation: moveInRight 1s ease-out;
+
+    @include respond(phone) {
+      letter-spacing: 0.4rem;
+    }
   }
 }
 
@@ -54,9 +63,17 @@ body {
   color: transparent;
   letter-spacing: 0.1rem;
   transition: all 0.2s;
+
   &:hover {
     transform: skewX(-2deg) skewY(-2deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+
+  @include respond(phone) {
+    font-size: 2.2rem;
+  }
+  @include respond(tab-port) {
+    font-size: 2.9rem;
   }
 }
 .heading-tertiary {
