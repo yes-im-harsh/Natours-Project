@@ -6,7 +6,9 @@
   box-sizing: inherit; }
 
 html {
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  /*We have put land above, because if a number is <900 so automatically it's <1200, So the 1200 will take precedence,
+  because its in last, so we have put tab-land in last because if width is less than 900 then this font size should apply.*/ }
 
 body {
   box-sizing: border-box; }

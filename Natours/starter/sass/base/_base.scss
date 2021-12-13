@@ -10,6 +10,8 @@
 html {
   font-size: 62.5%; //or 10px, 16px=100% so 1px=100/16% so 10px=100*10/16=62.5%
 
+  // Responsive Design
+
   // Method-1
   // @include respond-phone {
   //   font-size: 50%;
@@ -17,17 +19,17 @@ html {
 
   // Method-2
 
-  //Phone is automatically covered in tab because, max with 600 .
   // @include respond(phone) {
   //   font-size: 50%; /* 1rem=8px,  */
   // }
-
   // @include respond(tab-port) {
   //   font-size: 50%; //1rem=16px, So for 8px, so 8/16=50px
   // }
   // @include respond(tab-land) {
   //   font-size: 56.25%; //1rem=16px, So for 9px, so 9/16=56.25px
   // }
+
+  //Since font size of phone and tab-port are same 50% so we can exclude phone.
 
   @include respond(tab-land) {
     //Width<1200
@@ -37,6 +39,10 @@ html {
     //Width<900
     font-size: 50%; //1rem=16px, So for 8px, so 8/16=50px
   }
+
+  /*We have put land above, because if a number is <900 so automatically it's <1200, So the 1200 will take precedence,
+  because its in last, so we have put tab-land in last because if width is less than 900 then this font size should apply.*/
+
   @include respond(big-desktop) {
     font-size: 75%;
   }
