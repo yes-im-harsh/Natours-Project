@@ -9,6 +9,37 @@
 
 html {
   font-size: 62.5%; //or 10px, 16px=100% so 1px=100/16% so 10px=100*10/16=62.5%
+
+  // Method-1
+  // @include respond-phone {
+  //   font-size: 50%;
+  // }
+
+  // Method-2
+
+  //Phone is automatically covered in tab because, max with 600 .
+  // @include respond(phone) {
+  //   font-size: 50%; /* 1rem=8px,  */
+  // }
+
+  // @include respond(tab-port) {
+  //   font-size: 50%; //1rem=16px, So for 8px, so 8/16=50px
+  // }
+  // @include respond(tab-land) {
+  //   font-size: 56.25%; //1rem=16px, So for 9px, so 9/16=56.25px
+  // }
+
+  @include respond(tab-land) {
+    //Width<1200
+    font-size: 56.25%; //1rem=16px, So for 9px, so 9/16=56.25px
+  }
+  @include respond(tab-port) {
+    //Width<900
+    font-size: 50%; //1rem=16px, So for 8px, so 8/16=50px
+  }
+  @include respond(big-desktop) {
+    font-size: 75%;
+  }
 }
 
 body {
