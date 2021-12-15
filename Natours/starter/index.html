@@ -18,6 +18,23 @@
   <body>
     <header class="header">
       <div class="header__logo-box">
+        <!-- Responsive images For different density.(density switching Method)
+        <img
+          srcset="./img/logo-white.png 1x, ./img/logo-white-2x 2x"
+          alt="Logo"
+          class="header__logo"
+        /> -->
+
+        <!-- For diffrent sizes(Art Direction Method)
+
+        <picture class="header__logo">
+          <source srcset="./img/logo-white.png 1x, ./img/logo-white-2x 2x" media="(max-width: 37.5em)"/>
+          <img
+            src="./img/logo-white.png 1x, ./img/logo-white-2x 2x"
+            alt="Logo"
+          />
+        </picture> -->
+
         <img src="./img/logo-white.png" alt="Logo" class="header__logo" />
       </div>
       <div class="header__text-box">
